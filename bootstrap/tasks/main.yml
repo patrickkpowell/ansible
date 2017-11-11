@@ -26,7 +26,7 @@
       uid="{{item.user.uid}}"
       shell="/bin/bash"
       state="present"
-    when: "item.user.username in {{admins}}"
+    when: "item.user.username in admins"
     with_items: "{{userdefs}}"
     tags: users
 
