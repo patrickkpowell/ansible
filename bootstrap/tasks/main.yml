@@ -61,7 +61,7 @@
     user:
       name="{{item.user.username}}"
       state=absent
-    when: item.user.username not in admin_users and item.user.username not in normal_users
+    when: item.user.username not in admins and item.user.username not in users
     with_items: "{{userdefs}}"
     tags: users
     ignore_errors: True
