@@ -27,7 +27,7 @@
       shell="/bin/bash"
       state="present"
     when: item.user.username in admins
-    with_items: "{{_users}}"
+    with_items: "{{usersdefs}}"
     tags: users
 
 
