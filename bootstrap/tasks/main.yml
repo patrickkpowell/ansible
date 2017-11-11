@@ -31,46 +31,47 @@
     tags: users
 
 
-  - name: Push public SSH keys
-    authorized_key:
-      user="{{item.userdefs.username}}"
-      key="{{item.userdefs.ssh_key}}"
-    when: item.userdefs.username in admins
-    with_items: "{{userdefs}}"
-    tags: users
-
-  - name: Create users
-    user:
-      name="{{item.userdefs.username}}"
-      uid="{{item.userdefs.uid}}"
-      state="present"
-    when: item.userdefs.username in users
-    with_items: "{{userdefs}}"
-    tags: users
-
-  - name: Push public SSH keys
-    authorized_key:
-      user="{{item.userdefs.username}}"
-      key="{{item.userdefs.ssh_key}}"
-    when: item.userdefs.username in users
-    with_items: "{{userdefs}}"
-    tags: users
-
-  # Remove user accounts listed in our json who are not admins.
-  - name: Remove old users
-    user:
-      name="{{item.userdefs.username}}"
-      state=absent
-    when: item.userdefs.username not in admin_users and item.userdefs.username not in normal_users
-    with_items: "{{userdefs}}"
-    tags: users
-    ignore_errors: True
-
-#TODO: Find a non-hackish way to install to debian systems.
-#it is a hack, because if you run as bootstrap once, then you can not disable/delete the account
-#is is in use.  So that is why ignore_errors is on.
-  - name: Remove bootstrap user
-    user:
-      name=bootstrap
-      state=absent
-    ignore_errors: True
+#  - name: Push public SSH keys
+#    authorized_key:
+#      user="{{item.userdefs.username}}"
+#      key="{{item.userdefs.ssh_key}}"
+#    when: item.userdefs.username in admins
+#    with_items: "{{userdefs}}"
+#    tags: users
+#
+#  - name: Create users
+#    user:
+#      name="{{item.userdefs.username}}"
+#      uid="{{item.userdefs.uid}}"
+#      state="present"
+#    when: item.userdefs.username in users
+#    with_items: "{{userdefs}}"
+#    tags: users
+#
+#  - name: Push public SSH keys
+#    authorized_key:
+#      user="{{item.userdefs.username}}"
+#      key="{{item.userdefs.ssh_key}}"
+#    when: item.userdefs.username in users
+#    with_items: "{{userdefs}}"
+#    tags: users
+#
+#  # Remove user accounts listed in our json who are not admins.
+#  - name: Remove old users
+#    user:
+#      name="{{item.userdefs.username}}"
+#      state=absent
+#    when: item.userdefs.username not in admin_users and item.userdefs.username not in normal_users
+#    with_items: "{{userdefs}}"
+#    tags: users
+#    ignore_errors: True
+#
+##TODO: Find a non-hackish way to install to debian systems.
+##it is a hack, because if you run as bootstrap once, then you can not disable/delete the account
+##is is in use.  So that is why ignore_errors is on.
+#  - name: Remove bootstrap user
+#    user:
+#      name=bootstrap
+#      state=absent
+#    ignore_errors: True
+#
