@@ -1,5 +1,5 @@
 ---
   - name: Main Site Configuration Role
-    hosts: Initial Install
+    hosts: all
     roles:
       - bootstrap
