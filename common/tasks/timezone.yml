@@ -1,0 +1,21 @@
+---
+
+- name: Write /etc/sysconfig/clock
+  template: 
+    src="clockRedHat.j2"
+    dest="/etc/sysconfig/clock"
+    backup=yes
+    owner=root
+    group=root
+  when:
+    ansible_os_family == "RedHat"
+
+- name: Write /etc/timezone
+  template: 
+    src="clockUbuntu.j2"
+    dest="/etc/timezone"
+    backup=yes
+    owner=root
+    group=root
+  when:
+    ansible_os_family == "Debian"

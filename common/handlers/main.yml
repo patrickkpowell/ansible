@@ -1,0 +1,8 @@
+---
+  - name: Restart rsyslog
+    service: name=rsyslog state=restarted
+    tags:
+      - syslog 
+
+  - name: Set temp hostname
+    shell: hostname {{ ansible_fqdn }}

@@ -1,0 +1,20 @@
+---
+
+  - include: epel.yml
+    tags: epel
+    when: ansible_os_family == "RedHat"
+
+  - include: system_packages.yml
+    tags: system-packages
+
+#- include: hostname.yml
+
+#- include: timezone.yml
+#  tags: timezone
+
+#- include: root_password.yml
+#  tags: root-password
+
+#- include: hosts_file.yml
+#  tags: hosts_file
+
