@@ -23,7 +23,7 @@
     user:
       name="{{item.userdefs.username}}"
       groups="wheel"
-      uid="{{item.user.uid}}"
+      uid="{{item.userdefs.uid}}"
       shell="/bin/bash"
       state="present"
     when: item.userdefs.username in admins
