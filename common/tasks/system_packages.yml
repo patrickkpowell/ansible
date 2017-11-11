@@ -5,14 +5,7 @@
       name={{item}}
       state=latest
     with_items: 
-      - libselinux-python
-      - policycoreutils
-      - policycoreutils-python
-      - screen
-      - vim
-      - tmux
-      - htop
-      - iftop
+      {{packages}}
     tags:
       - system_packages
     when:
@@ -23,18 +16,18 @@
 #Make sure we do or dont need the following packages for Ubuntu
 #- libselinux-python
 #- policycoreutils-python
-  - name: Install base system packages
-    apt:
-      name={{item}}
-      state=latest
-    with_items: 
-      - policycoreutils
-      - screen
-      - vim
-      - tmux
-      - htop
-      - iftop
-    tags:
-      - system_packages
-    when:
-      ansible_os_family == "Debian"
+#  - name: Install base system packages
+#    apt:
+#      name={{item}}
+#      state=latest
+#    with_items: 
+#      - policycoreutils
+#      - screen
+#      - vim
+#      - tmux
+#      - htop
+#      - iftop
+#    tags:
+#      - system_packages
+#    when:
+#      ansible_os_family == "Debian"
