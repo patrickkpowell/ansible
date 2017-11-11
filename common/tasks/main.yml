@@ -1,9 +1,5 @@
 ---
 
-  - import_tasks: epel.yml
-    tags_tasks: epel
-    when: ansible_os_family == "RedHat"
-
   - import_tasks: system_packages.yml
     tags: system-packages
 
