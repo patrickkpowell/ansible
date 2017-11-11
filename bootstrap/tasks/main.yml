@@ -21,12 +21,12 @@
   # Loop through _users until we find a match in admin_users
   - name: Create users
     user:
-      name="{{item.userdefs.username}}"
+      name="{{item.user.username}}"
       groups="wheel"
-      uid="{{item.userdefs.uid}}"
+      uid="{{item.user.uid}}"
       shell="/bin/bash"
       state="present"
-    when: "item.userdefs.username in {{admins}}"
+    when: "item.user.username in {{admins}}"
     with_items: "{{userdefs}}"
     tags: users
 
