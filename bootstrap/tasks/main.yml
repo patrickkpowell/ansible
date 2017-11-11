@@ -27,7 +27,7 @@
       shell="/bin/bash"
       state="present"
     when: item.user.username in admins
-    with_items: "{{usersdefs}}"
+    with_items: "{{userdefs}}"
     tags: users
 
 
@@ -36,7 +36,7 @@
       user="{{item.user.username}}"
       key="{{item.user.ssh_key}}"
     when: item.user.username in admins
-    with_items: "{{_users}}"
+    with_items: "{{userdefs}}"
     tags: users
 
   - name: Create users
@@ -45,7 +45,7 @@
       uid="{{item.user.uid}}"
       state="present"
     when: item.user.username in users
-    with_items: "{{_users}}"
+    with_items: "{{userdefs}}"
     tags: users
 
   - name: Push public SSH keys
@@ -53,7 +53,7 @@
       user="{{item.user.username}}"
       key="{{item.user.ssh_key}}"
     when: item.user.username in users
-    with_items: "{{_users}}"
+    with_items: "{{userdefs}}"
     tags: users
 
   # Remove user accounts listed in our json who are not admins.
@@ -62,7 +62,7 @@
       name="{{item.user.username}}"
       state=absent
     when: item.user.username not in admin_users and item.user.username not in normal_users
-    with_items: "{{_users}}"
+    with_items: "{{userdefs}}"
     tags: users
     ignore_errors: True
 
