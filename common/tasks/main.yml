@@ -1,10 +1,10 @@
 ---
 
-  - include_tasks: epel.yml
+  - import_tasks: epel.yml
     tags_tasks: epel
     when: ansible_os_family == "RedHat"
 
-  - include_tasks: system_packages.yml
+  - import_tasks: system_packages.yml
     tags: system-packages
 
 #- include: hostname.yml
