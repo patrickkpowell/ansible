@@ -2,4 +2,5 @@
   - name: Main Site Configuration Role
     hosts: all
     roles:
+      - bootstrap
       - common
