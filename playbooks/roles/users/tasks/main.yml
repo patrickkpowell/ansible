@@ -19,7 +19,7 @@
 
   - debug:
       msg: "Users {{item.user.username}}"
-    with_items: _users
+    with_items: "_users"
     
   - debug:
       msg: "Admin users {{admin_users}}"
