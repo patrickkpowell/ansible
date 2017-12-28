@@ -1,0 +1,5 @@
+---
+  - name: Main Site Configuration Role
+    hosts: dns_servers
+    roles:
+      - bind
