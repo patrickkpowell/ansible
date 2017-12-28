@@ -4,4 +4,4 @@
       name: "{{item.package.name}}"
       state: "latest"
     with_items:
-      - "{{ item.packages }}"
+      - "{{ packages }}"
