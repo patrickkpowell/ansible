@@ -2,12 +2,9 @@
 
   - name: Install base system packages
     yum:
-      name={{item}}
+      name={{item.package}}
       state=latest
     with_items: 
       - "{{packages}}"
-    tags:
-      - system_packages
-    when:
-      ansible_os_family == "RedHat"
+
 
