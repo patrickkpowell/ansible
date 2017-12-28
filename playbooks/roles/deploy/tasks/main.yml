@@ -8,3 +8,5 @@
       src: "ifcfg-ens192.j2"
       dest: :/etc/sysconfig/network-scripts/ifcfg-{{device}}"
       backup: "yes"
+    notify:
+      - Restart network
