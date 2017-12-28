@@ -4,33 +4,30 @@
 #validate the groups are there
   - name: Make sure we have a wheel group
     group:
-      name=wheel
-      state=present
-    tags: users
+      name: "wheel"
+      state: "present"
 
 
   - name: Setup sudo
     template:
-      src=01_wheel.j2
-      dest=/etc/sudoers.d/01_wheel
-      owner=root
-      group=root
-      mode=0600
-      validate='visudo -cf %s'
-    tags: users
+      src: "01_wheel.j2"
+      dest: "/etc/sudoers.d/01_wheel"
+      owner: "root"
+      group: "root"
+      mode: "0600"
+      validate: "visudo -cf %s"
 
   # Create User accounts
   # Loop through _users until we find a match in admin_users
   - name: Create users
     user:
-      name="{{item.user.username}}"
-      groups="wheel"
-      uid="{{item.user.uid}}"
-      shell="/bin/bash"
-      state="present"
+      name: "{{item.user.username}}"
+      groups: "wheel"
+      uid: "{{item.user.uid}}"
+      shell: "{{shell}}"
+      state: "{{state}}"
     when: item.user.username in admin_users
     with_items: _users
-    tags: users
 
 
   - name: Push public SSH keys
