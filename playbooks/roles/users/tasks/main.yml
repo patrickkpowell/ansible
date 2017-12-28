@@ -31,8 +31,8 @@
       name: "{{item.user.username}}"
       groups: "wheel"
       uid: "{{item.user.uid}}"
-      shell: "{{shell}}"
-      state: "{{state}}"
+      shell: "{{item.user.shell}}"
+      state: "{{item.user.state}}"
     when: item.user.username in admin_users
     with_items: "{{_users}}"
 
