@@ -1,5 +1,5 @@
 ---
-  - name: Main Site Configuration Role
+  - name: Dynamic DNS Server
     hosts: dns_servers
     roles:
       - bind

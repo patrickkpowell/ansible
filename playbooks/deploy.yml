@@ -1,0 +1,5 @@
+---
+  - name: Deploy hostname and network settings
+    hosts: deployhost
+    roles:
+      - deploy
