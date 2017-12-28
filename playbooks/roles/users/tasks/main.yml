@@ -19,7 +19,7 @@
 
   - debug:
       msg: "Users {{item.user.username}}"
-    with_items: "_users"
+    with_items: "{{_users}}"
     
   - debug:
       msg: "Admin users {{admin_users}}"
@@ -34,7 +34,7 @@
       shell: "{{shell}}"
       state: "{{state}}"
     when: item.user.username in admin_users
-    with_items: _users
+    with_items: "{{_users}}"
 
 
   - name: Push public SSH keys
