@@ -8,15 +8,6 @@
     with_items:
       - "{{ dnspkgs }}"
 
-  - name: Copy named.conf template
-    template:
-      src: "named.conf.j2"
-      dest: "/etc/named.conf"
-      backup: "yes"
-      owner: "root"
-      group: "named"
-      mode: "640"
-
   - name: Copy forward powellcompanies zone file
     copy:
       src: "powellcompanies.com.zone"
@@ -34,3 +25,13 @@
       owner: "root"
       group: "named"
       mode: "750"
+
+  - name: Copy named.conf template
+    template:
+      src: "named.conf.j2"
+      dest: "/etc/named.conf"
+      backup: "yes"
+      owner: "root"
+      group: "named"
+      mode: "640"
+      validate: "named-checkconf %s"
