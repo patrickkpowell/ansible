@@ -2,6 +2,6 @@
   - name: DHCP Server
     hosts: "dhcp_servers"
     roles:
-      - dhcp
+      - dhcpd
     become_user: "root"
     become_method: "sudo"
