@@ -18,10 +18,10 @@
       validate: "visudo -cf %s"
 
   - debug:
-    msg: "{{item.user.username}}"
+    msg: "Users {{item.user.username}}"
     
   - debug:
-    msg: "{{admin_users}}"
+    msg: "Admin users {{admin_users}}"
 
   # Create User accounts
   # Loop through _users until we find a match in admin_users
