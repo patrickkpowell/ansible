@@ -1,7 +1,7 @@
 ---
   - name: "Install DNS Packages"
     yum:
-      name: {{ item.package.name }}
+      name: "{{ item.package.name }}"
       state: "latest"
     with_items:
-      - {{ packages }}
+      - "{{ packages }}"
