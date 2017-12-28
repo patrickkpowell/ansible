@@ -16,3 +16,21 @@
       owner: "root"
       group: "named"
       mode: "640"
+
+  - name: Copy forward powellcompanies zone file
+    copy:
+      src: "powellcompanies.com.zone"
+      dest: "/var/named/chroot/etc/"
+      backup: "yes"
+      owner: "root"
+      group: "named"
+      mode: "750"
+
+  - name: Copy reverse powellcompanies zone file
+    copy:
+      src: "powellcompanies.com.rev.zone"
+      dest: "/var/named/chroot/etc/"
+      backup: "yes"
+      owner: "root"
+      group: "named"
+      mode: "750"
