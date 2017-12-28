@@ -1,5 +1,5 @@
 ---
-  - name: "Install DNS Packages"
+  - name: Install DNS Packages
     yum:
       name: "{{ item.package.name }}"
       state: "latest"
