@@ -17,12 +17,16 @@
       mode: "0600"
       validate: "visudo -cf %s"
 
+  - debug:
+    msg: "{{item.user.username}}"
+    
+  - debug:
+    msg: "{{admin_users}}"
+
   # Create User accounts
   # Loop through _users until we find a match in admin_users
   - name: Create users
     user:
-      msg: "{{item.user.username}}"
-      msg: "{{admin_users}}"
       name: "{{item.user.username}}"
       groups: "wheel"
       uid: "{{item.user.uid}}"
