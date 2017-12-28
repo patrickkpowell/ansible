@@ -1,0 +1,7 @@
+---
+  - name: DHCP Server
+    hosts: "dhcp_servers"
+    roles:
+      - dhcp
+    become_user: "root"
+    become_method: "sudo"
