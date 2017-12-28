@@ -18,7 +18,8 @@
       validate: "visudo -cf %s"
 
   - debug:
-      msg: "Users {{_users}}"
+      msg: "Users {{item.user.username}}"
+    with_items: _users
     
   - debug:
       msg: "Admin users {{admin_users}}"
