@@ -3,7 +3,7 @@
   - import_tasks: system_packages.yml
     tags: system-packages
 
-  - import_tasks: hostname.yml
+#  - import_tasks: hostname.yml
 
 #- include: timezone.yml
 #  tags: timezone
