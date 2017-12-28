@@ -4,4 +4,4 @@
     roles:
       - bind
     become_user: "root"
-    becom_method: "sudo"
+    become_method: "sudo"
