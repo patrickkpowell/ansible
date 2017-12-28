@@ -1,6 +1,6 @@
 ---
-	packages:
-	  - package:
-	    name: "bind-chroot"
-	  - package:
-	    name: "bind-utils"
+  packages:
+  - package:
+    name: "bind-chroot"
+  - package:
+    name: "bind-utils"
