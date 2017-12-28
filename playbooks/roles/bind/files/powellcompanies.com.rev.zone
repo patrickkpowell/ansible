@@ -1,0 +1,28 @@
+$ORIGIN .
+$TTL 600	; 10 minutes
+3.168.192.in-addr.arpa	IN SOA	ns1.powellcompanies.com. admin.powellcompanies.com. (
+				2015123547 ; serial
+				28800      ; refresh (8 hours)
+				604800     ; retry (1 week)
+				604800     ; expire (1 week)
+				86400      ; minimum (1 day)
+				)
+			NS	ns1.powellcompanies.com.
+$ORIGIN 3.168.192.in-addr.arpa.
+$TTL 300	; 5 minutes
+101			PTR	SAKOs-MBP.powellcompanies.com.
+115			PTR	OBi202.powellcompanies.com.
+$ORIGIN 3.168.192.3.168.192.in-addr.arpa.
+101			PTR	SAKOs-MBP.powellcompanies.com.
+112			PTR	Macs-MBP.powellcompanies.com.
+$TTL 3600	; 1 hour
+189			PTR	malware-express.powellcompanies.com.
+192			PTR	base-extreme.powellcompanies.com.
+$TTL 300	; 5 minutes
+249			PTR	Phue.powellcompanies.com.
+$ORIGIN 3.168.192.in-addr.arpa.
+$TTL 600	; 10 minutes
+2			PTR	mycloudnas.powellcompanies.com.
+254			PTR	gateway.powellcompanies.com.
+7			PTR	ns1.powellcompanies.com.
+6			PTR	wdtvlivehub.powellcompanies.com.
