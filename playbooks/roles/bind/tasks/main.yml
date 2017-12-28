@@ -3,5 +3,6 @@
     yum:
       name: "{{ item.package.name }}"
       state: "latest"
+    when: packages is defined
     with_items:
       - "{{ packages }}"
