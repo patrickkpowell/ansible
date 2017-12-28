@@ -1,7 +1,7 @@
 ---
   - name: Install DNS Packages
     yum:
-      name: "{{ item.package.name }}"
+      name: "{{ item.package }}"
       state: "latest"
     when: packages is defined
     with_items:
