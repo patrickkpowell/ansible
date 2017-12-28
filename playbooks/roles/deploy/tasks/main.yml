@@ -6,7 +6,7 @@
   - name: Copy network config jinja template
     template:
       src: "ifcfg-ens192.j2"
-      dest: :/etc/sysconfig/network-scripts/ifcfg-{{device}}"
+      dest: "/etc/sysconfig/network-scripts/ifcfg-{{device}}"
       backup: "yes"
     notify:
       - Restart network
