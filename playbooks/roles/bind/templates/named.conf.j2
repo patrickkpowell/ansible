@@ -67,12 +67,5 @@ zone "3.168.192.in-addr.arpa" {
     allow-update { key rndc-key; };
 };
 
-logging {
-    channel query.log {
-        file "/var/log/query.log";
-        severity debug 3;
-    };
-    category queries { query.log; };
-
 include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
