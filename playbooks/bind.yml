@@ -1,5 +1,7 @@
 ---
   - name: Dynamic DNS Server
-    hosts: dns_servers
+    hosts: "dns_servers"
     roles:
       - bind
+    become_user: "root"
+    becom_method: "sudo"
