@@ -3,4 +3,4 @@
   - name: Unstall dhcp server
     yum:
       name: "dhcp"
-     state: "latest"
+      state: "latest"
