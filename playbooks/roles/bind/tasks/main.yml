@@ -3,5 +3,5 @@
     yum:
       name: {{item}}
       state: latest
-    with-items:
+    with_items:
       {{packages}}
