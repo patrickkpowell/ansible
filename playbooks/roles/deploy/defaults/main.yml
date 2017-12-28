@@ -6,6 +6,6 @@
   dns1: "8.8.8.8"
   dns2: "8.8.4.4"
   domain: "localhost.localdomain"
-  name: "eth0"
+  devicename: "eth0"
   device: "eth0"
   onboot: "yes"
