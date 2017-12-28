@@ -21,6 +21,8 @@
   # Loop through _users until we find a match in admin_users
   - name: Create users
     user:
+      debug: "{{item.user.username}}"
+      debug: "{{admin_users}}"
       name: "{{item.user.username}}"
       groups: "wheel"
       uid: "{{item.user.uid}}"
