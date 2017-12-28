@@ -3,4 +3,5 @@
     hosts: deployhost
     roles:
       - common
+      - users
       - deploy

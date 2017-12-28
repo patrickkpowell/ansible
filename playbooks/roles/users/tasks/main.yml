@@ -1,0 +1,80 @@
+---
+#  Setup user accounts and push out public keys to hosts
+
+#validate the groups are there
+  - name: Make sure we have a wheel group
+    group:
+      name=wheel
+      state=present
+    tags: users
+
+
+  - name: Setup sudo
+    template:
+      src=01_wheel.j2
+      dest=/etc/sudoers.d/01_wheel
+      owner=root
+      group=root
+      mode=0600
+      validate='visudo -cf %s'
+    tags: users
+
+  # Create User accounts
+  # Loop through _users until we find a match in admin_users
+  - name: Create users
+    user:
+      name="{{item.user.username}}"
+      groups="wheel"
+      uid="{{item.user.uid}}"
+      shell="/bin/bash"
+      state="present"
+    when: item.user.username in admin_users
+    with_items: _users
+    tags: users
+
+
+  - name: Push public SSH keys
+    authorized_key:
+      user="{{item.user.username}}"
+      key="{{item.user.ssh_key}}"
+    when: item.user.username in admin_users
+    with_items: _users
+    tags: users    
+
+
+  - name: Create users
+    user:
+      name="{{item.user.username}}"
+      uid="{{item.user.uid}}"
+      state="present"
+    when: item.user.username in normal_users
+    with_items: _users
+    tags: users
+
+  - name: Push public SSH keys
+    authorized_key:
+      user="{{item.user.username}}"
+      key="{{item.user.ssh_key}}"
+    when: item.user.username in normal_users
+    with_items: _users
+    tags: users  
+
+  # Remove user accounts listed in our json who are not admins.  
+  - name: Remove old users
+    user:
+      name="{{item.user.username}}"
+      state=absent
+    when: item.user.username not in admin_users and item.user.username not in normal_users
+    with_items: _users
+    tags: users
+    ignore_errors: True
+
+#TODO: Find a non-hackish way to install to debian systems.  
+#it is a hack, because if you run as bootstrap once, then you can not disable/delete the account
+#is is in use.  So that is why ignore_errors is on.  
+  - name: Remove bootstrap user
+    user:
+      name=bootstrap
+      state=absent
+    ignore_errors: True
+
