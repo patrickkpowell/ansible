@@ -57,13 +57,13 @@ zone "." IN {
 
 zone "powellcompanies.com" {
     type master;
-    file "/var/named/powellcompanies.com.zone";
+    file "/var/named/chroot/etc/powellcompanies.com.zone";
     allow-update { key rndc-key; };
 };
 
 zone "3.168.192.in-addr.arpa" {
     type master;
-    file "/var/named/powellcompanies.com.rev.zone";
+    file "/var/named/chroot/etc/powellcompanies.com.rev.zone";
     allow-update { key rndc-key; };
 };
 
