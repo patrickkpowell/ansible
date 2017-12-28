@@ -4,4 +4,4 @@
     roles:
       - common
       - users
-      #- deploy
+      - deploy
