@@ -18,6 +18,7 @@ options {
 	statistics-file "/var/named/data/named_stats.txt";
 	memstatistics-file "/var/named/data/named_mem_stats.txt";
 	allow-query     { {{allowquery}}; localhost; };
+	forwarders { {{forwarders}}; }
 
 	/* 
 	 - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.

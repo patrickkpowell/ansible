@@ -1,4 +1,4 @@
 ---
   dnspkgs:
-  - dnspkg: "bind-chroot"
-  - dnspkg: "bind-utils"
+    - dnspkg: "bind-chroot"
+    - dnspkg: "bind-utils"
