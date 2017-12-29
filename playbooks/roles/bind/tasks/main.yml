@@ -43,6 +43,7 @@
       source: 192.168.3.0/24
       permanent: true
       state: enabled
+    notify: RestartFirewalld
 
   - name: Open firewall to DNS to vpn net
     firewalld:
@@ -50,6 +51,7 @@
       source: 192.168.2.0/24
       permanent: true
       state: enabled
+    notify: RestartFirewalld
 
   - name: Set selinux to allow user named to create journal files
     shell: "chcon -R -t dnssec_trigger_var_run_t /var/named/chroot/etc/named/"
