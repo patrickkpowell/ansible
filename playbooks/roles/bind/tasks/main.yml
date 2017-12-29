@@ -38,5 +38,5 @@
     notify: RestartNamed
 
   - name: Set selinux to allow user named to create journal files
-    shell: "chcon -R -t dnssec_trigger_var_run_t ‘/var/named/chroot/etc/named/’"
+    shell: "chcon -R -t dnssec_trigger_var_run_t /var/named/chroot/etc/named/"
     
