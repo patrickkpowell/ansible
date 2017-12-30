@@ -23,6 +23,7 @@ $TTL 300	; 5 minutes
 $ORIGIN 3.168.192.in-addr.arpa.
 $TTL 600	; 10 minutes
 2			PTR	mycloudnas.powellcompanies.com.
+3			PTR	headliner.powellcompanies.com.
 254			PTR	gateway.powellcompanies.com.
-7			PTR	headliner.powellcompanies.com.
+7			PTR	skipper.powellcompanies.com.
 6			PTR	wdtvlivehub.powellcompanies.com.
