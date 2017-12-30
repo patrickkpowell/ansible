@@ -1,0 +1,7 @@
+---
+
+  - name: Install openvpn
+    yum:
+      name: "{{item.vpnpkg}}"
+    with_items:
+      {{vpnpkgs}}

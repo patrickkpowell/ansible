@@ -32,6 +32,7 @@ $TTL 600    ; 10 minutes
 mycloudnas      A   192.168.3.2
 headliner      A   192.168.3.3
 skipper    A   192.168.3.7
+outfitter   A   192.168.3.4
 $TTL 600    ; 10 minutes
 pgw         CNAME   ns1
 plex        CNAME   headliner
