@@ -4,7 +4,7 @@
     yum:
       name: "{{item.vpnpkg}}"
     with_items:
-      {{vpnpkgs}}
+      "{{vpnpkgs}}"
 
   - name: Untar openvpn configs
     unarchive:
