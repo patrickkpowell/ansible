@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 600    ; 10 minutes
 powellcompanies.com IN SOA  ns1.powellcompanies.com. admin.powellcompanies.com. (
-                2017123006 ; serial
+                2017123007 ; serial
                 28800      ; refresh (8 hours)
                 3600       ; retry (1 hour)
                 604800     ; expire (1 week)
@@ -33,6 +33,8 @@ mycloudnas      A   192.168.3.2
 ns1      A   192.168.3.7
 headliner    A   192.168.3.3
 outfitter   A   192.168.3.4
+counselor   A   192.168.3.8
+drudge      A   192.168.3.9
 $TTL 600    ; 10 minutes
 pgw         CNAME   ns1
 plex        CNAME   headliner
