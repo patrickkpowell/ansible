@@ -1,7 +1,7 @@
 $ORIGIN .
 $TTL 600	; 10 minutes
 3.168.192.in-addr.arpa	IN SOA	ns1.powellcompanies.com. admin.powellcompanies.com. (
-				2015123547 ; serial
+				2017123006 ; serial
 				28800      ; refresh (8 hours)
 				604800     ; retry (1 week)
 				604800     ; expire (1 week)
@@ -26,5 +26,5 @@ $TTL 600	; 10 minutes
 3			PTR	headliner.powellcompanies.com.
 4			PTR	outfitter.powellcompanies.com.
 254			PTR	gateway.powellcompanies.com.
-7			PTR	skipper.powellcompanies.com.
+7			PTR	ns1.powellcompanies.com.
 6			PTR	wdtvlivehub.powellcompanies.com.
