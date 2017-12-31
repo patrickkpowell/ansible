@@ -4,5 +4,5 @@
     tags:
       - syslog 
 
-  - name: Set temp hostname
-    shell: hostname {{ ansible_fqdn }}
+  #- name: Set temp hostname
+  #  shell: hostname {{ ansible_fqdn }}

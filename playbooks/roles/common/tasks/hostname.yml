@@ -1,27 +1,30 @@
 ---
 
-- name: Set Hostname
-  template:
-    src="network.j2"
-    dest="/etc/sysconfig/network"
-    owner=root
-    group=root
-    backup=yes
-    mode=0644
-  notify: Set temp hostname
-  tags:
-    - hostname
-  when:
-    ansible_os_family == "RedHat"
+  - name: Set hostname
+    hostname: "{{hostname}}"
 
-- name: Set Hostname Debian
-  template:
-    src="hostname.j2"
-    dest="/etc/hostname"
-    owner=root
-    group=root
-    backup=yes
-    mode=0644
-  notify: Set temp hostname
-  when:
-    ansible_os_family == "Debian"
+#- name: Set Hostname
+#  template:
+#    src="network.j2"
+#    dest="/etc/sysconfig/network"
+#    owner=root
+#    group=root
+#    backup=yes
+#    mode=0644
+#  notify: Set temp hostname
+#  tags:
+#    - hostname
+#  when:
+#    ansible_os_family == "RedHat"
+#
+#- name: Set Hostname Debian
+#  template:
+#    src="hostname.j2"
+#    dest="/etc/hostname"
+#    owner=root
+#    group=root
+#    backup=yes
+#    mode=0644
+#  notify: Set temp hostname
+#  when:
+#    ansible_os_family == "Debian"
