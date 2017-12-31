@@ -6,4 +6,7 @@
     with_items:
       {{vpnpkgs}}
 
-  
+  - name: Untar openvpn configs
+    unarchive:
+      src: "{{ artifact_repo }}openvpn/pc-openvpnserver.tgz"
+      dest: "/etc/openvpn"

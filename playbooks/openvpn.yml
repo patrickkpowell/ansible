@@ -1,0 +1,6 @@
+---
+
+  - hosts: vpn_servers
+    roles:
+    - openvpn
+    
