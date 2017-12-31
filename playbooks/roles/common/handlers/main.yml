@@ -1,9 +1,9 @@
 ---
-  - name: Restart rsyslog
-    service: name=rsyslog state=restarted
-    tags:
-      - syslog 
+  - name: "RestartRsyslog"
+    service: 
+      name: "rsyslog"
+      state: "restarted"
 
-  - name: RestartNetwork
+  - name: "RestartNetwork"
     service: "network"
     state: "restarted"
