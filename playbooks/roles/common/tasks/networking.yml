@@ -5,4 +5,5 @@
       dest: "/etc/sysconfig/network-scripts/ifcfg-{{device}}"
       backup: "yes"
       mode: "644"
+    notify: "RestartNetwork"
   

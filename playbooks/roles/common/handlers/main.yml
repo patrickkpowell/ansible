@@ -4,5 +4,6 @@
     tags:
       - syslog 
 
-  #- name: Set temp hostname
-  #  shell: hostname {{ ansible_fqdn }}
+  - name: RestartNetwork
+    service: "network"
+    state: "restarted"
