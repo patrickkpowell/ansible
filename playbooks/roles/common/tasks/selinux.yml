@@ -1,0 +1,5 @@
+---
+  name: "Set SELinux state"
+    selinux:
+      policy: "{{se_policy}}"
+      state: "{{se_state}}"
