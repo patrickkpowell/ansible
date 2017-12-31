@@ -3,3 +3,8 @@
     selinux:
       policy: "{{se_policy}}"
       state: "{{se_state}}"
+
+- name: Restart server
+  shell: sleep 2 && /sbin/shutdown -r now "Ansible system package upgraded"
+  async: 1
+  poll: 0
