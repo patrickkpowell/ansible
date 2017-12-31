@@ -1,0 +1,8 @@
+---
+  - name: Set Network parameters for host
+    template:
+      src: "ifcfg-dev.j2"
+      dest: "/etc/sysconfig/network-scripts/ifcfg-{{device}}"
+      backup: "yes"
+      mode: "644"
+  
