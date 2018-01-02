@@ -1,0 +1,5 @@
+---
+  - name: RestartFirewalld
+    service:
+      name=firewalld
+      state=restarted
