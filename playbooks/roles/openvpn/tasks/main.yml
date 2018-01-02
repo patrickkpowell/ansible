@@ -6,6 +6,10 @@
     with_items:
       "{{vpnpkgs}}"
 
+  - name: Enable OpenVPN
+    service: openvpn@server
+    status: enabled
+
   - name: Untar openvpn configs
     unarchive:
       src: "{{ artifact_repo }}openvpn/pc-openvpnserver.tar.gz"
