@@ -9,7 +9,7 @@
   - name: Enable OpenVPN
     service: 
       name: "openvpn@server"
-      status: "started"
+      state: "enabled"
       enabled: "yes"
 
   - name: Untar openvpn configs
