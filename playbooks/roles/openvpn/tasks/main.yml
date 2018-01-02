@@ -17,9 +17,9 @@
       src: "{{ artifact_repo }}openvpn/pc-openvpnserver.tar.gz"
       dest: "/etc/openvpn"
 
-  - name: Open firewall to OpenVPN
-    firewalld:
-      service: openvpn
-      permanent: true
-      state: enabled
-    notify: RestartFirewalld
+#  - name: Open firewall to OpenVPN
+#    firewalld:
+#      service: openvpn
+#      permanent: true
+#      state: enabled
+#    notify: RestartFirewalld
