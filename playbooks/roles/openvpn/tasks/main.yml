@@ -25,7 +25,8 @@
     notify: RestartFirewalld
 
   - name: Allow traffic between networks through FORWRD iptables chain via firewalld
-    command: "firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -o tun0 -i ens192 --permanent -j ACCEPT"  
+    command: "firewall-cmd  --permanent --direct --add-rule ipv4 filter FORWARD 0 -o tun0 -i ens192 -j ACCEPT"
+    notify: RestartFirewalld  
 
   - name: enable forwarding in the kernel
     sysctl:
