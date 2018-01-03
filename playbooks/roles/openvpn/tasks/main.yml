@@ -23,3 +23,9 @@
       permanent: true
       state: enabled
     notify: RestartFirewalld
+
+  - name: enable forwarding in the kernel
+    sysctl:
+      name: net.ipv4.ip_forward
+      value: 1
+      sysctl_set: yes
