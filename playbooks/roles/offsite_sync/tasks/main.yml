@@ -1,0 +1,9 @@
+---
+
+  - name: install incrond
+    yum:
+      name: "incron"
+      state: "latest"
+      state: "started"
+      enabled: "yes"
+
