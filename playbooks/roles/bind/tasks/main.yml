@@ -8,6 +8,9 @@
     with_items:
       - "{{ dnspkgs }}"
 
+  - name: Freeze zone files for update
+    shell: rndc freeze
+
   - name: Copy forward powellcompanies zone file
     copy:
       src: "powellcompanies.com.zone"
@@ -36,6 +39,9 @@
       mode: "640"
       validate: "named-checkconf %s"
     notify: RestartNamed
+
+  - name: Thaw zone files for update
+    shell: rndc thaw
 
   - name: Open firewall to DNS op local net
     firewalld:
