@@ -17,6 +17,7 @@ $TTL 3600   ; 1 hour
 base-extreme        A   192.168.3.192
             TXT "31d9488d412ed3a7077869f18c6138fcba"
 $TTL 600    ; 10 minutes
+cif             A   192.168.3.14
 carport         A   192.168.3.13
 frontdoor       A   192.168.3.12
 gateway         A   192.168.3.254
