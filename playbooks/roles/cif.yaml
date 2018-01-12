@@ -1,0 +1,6 @@
+---
+
+  - hosts: cif_servers
+    roles:
+    - cif
+    

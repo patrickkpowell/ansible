@@ -1,0 +1,4 @@
+---
+  - name: Download and run easybutton
+    shell: "curl -Ls https://raw.githubusercontent.com/csirtgadgets/massive-octo-spice/master/hacking/platforms/easybutton_curl.sh | sudo bash -"
+    
