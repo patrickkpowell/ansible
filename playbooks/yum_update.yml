@@ -1,0 +1,7 @@
+---
+  - name: Yum update
+    hosts: "all"
+    roles:
+      - yum_update
+    become_user: "root"
+    become_method: "sudo"
