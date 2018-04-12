@@ -9,7 +9,10 @@
       - "{{ dnspkgs }}"
 
   - name: Freeze zone files for update
-    shell: rndc freeze
+    #shell: rndc freeze
+    service:
+      name: named
+      state: stopped
 
   - name: Copy forward powellcompanies zone file
     copy:
@@ -39,6 +42,12 @@
       mode: "640"
       validate: "named-checkconf %s"
     notify: RestartNamed
+
+  - name: Freeze zone files for update
+    #shell: rndc freeze
+    service:
+      name: named
+      state: started
 
   - name: Thaw zone files for update
     shell: rndc thaw
