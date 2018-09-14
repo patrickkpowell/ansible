@@ -1,0 +1,28 @@
+---
+
+  - name: Make sure yum mount directory exists
+    file:
+      path: "{{repo_mount}}"
+      state: "directory"
+
+  - name: Make sure yum repo is in fstab
+    lineinfile:
+      path: "/etf/fstab"
+      line: '{{repo_share}} {{repo_mount}} cifs username={{repo_user}},password={{repo_passwd}},uid=110,gid=120,rw,suid 0 0'
+
+  - name: Mount yum share
+    mount:
+      path: "{{repo_mount}}"
+      state: "mounted"
+
+  - name: Remove all repos
+    file:
+      path: "/etc/yum.repos.d/"
+      state: "absent"
+
+  - name: Push base repo config
+    template:
+      src: "CentOS-Base.repo.j2"
+      dest: "/etc/yum.repos.d/"
+      owner: "root"
+      mode: "0755"

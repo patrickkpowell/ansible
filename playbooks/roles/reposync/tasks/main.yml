@@ -1,0 +1,11 @@
+---
+  - name: Install required Packages
+    yum:
+      name: "{{item}}"
+      state: latest
+    with_items:
+      - yum_utils
+      - createrepo
+
+  - name: Sync CentOS 7 Yum Repository
+    shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata

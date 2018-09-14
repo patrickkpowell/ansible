@@ -1,0 +1,7 @@
+#!/bin/bash
+
+reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata
+reposync -d --gpgcheck -l --repoid=updates --download_path={{repo_path}} --downloadcomps --download-metadata
+reposync -d --gpgcheck -l --repoid=extras --download_path={{repo_path}} --downloadcomps --download-metadata
+reposync -d --gpgcheck -l --repoid=remi --download_path={{repo_path}} --downloadcomps --download-metadata
+reposync -d --gpgcheck -l --repoid=epel --download_path={{repo_path}} --downloadcomps --download-metadata
