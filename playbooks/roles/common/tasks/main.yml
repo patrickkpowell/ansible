@@ -2,7 +2,7 @@
 
   - name: Install Packages
     yum:
-      name: {{item}}
+      name: "{{item}}"
       state: "latest"
     with_items:
       - cifs-utils
