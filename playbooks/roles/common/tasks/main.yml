@@ -1,12 +1,5 @@
 ---
 
-  - name: Install Packages
-    yum:
-      name: "{{item}}"
-      state: "latest"
-    with_items:
-      - cifs-utils
-
   - import_tasks: "epel.yml"
   - import_tasks: "system_packages.yml"
   - import_tasks: "networking.yml"
