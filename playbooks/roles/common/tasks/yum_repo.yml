@@ -10,12 +10,15 @@
       path: "/etc/fstab"
       line: '{{repo_share}} {{repo_mount}} cifs username={{repo_user}},password={{repo_passwd}},uid=110,gid=120,rw,suid 0 0'
 
-  - name: Mount yum share
-    mount:
-      path: "{{repo_mount}}"
-      state: "mounted"
-      src: "{{repo_share}}"
-      fstype: "cifs"
+#  - name: Mount yum share
+#    mount:
+#      path: "{{repo_mount}}"
+#      state: "mounted"
+#      src: "{{repo_share}}"
+#      fstype: "cifs"
+
+  - name: "Mount {{repo_mount}}"
+    shell: "mount {{repo_mount}}"
 
   - name: Remove all repos
     file:
