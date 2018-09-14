@@ -21,9 +21,16 @@
     shell: "mount {{repo_mount}}"
     ignore_errors: "yes"
 
+  - name: temp
+    file:
+      path: "/etc/yum.repos.d"
+      state: "directory"
+      owner: "root"
+      mode: 0755
+
   - name: Remove all repos
     file:
-      path: "/etc/yum.repos.d/"
+      path: "/etc/yum.repos.d/*"
       state: "absent"
 
   - name: Push base repo config
