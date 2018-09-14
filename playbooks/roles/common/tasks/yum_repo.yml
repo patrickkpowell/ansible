@@ -28,6 +28,6 @@
   - name: Push base repo config
     template:
       src: "CentOS-Base.repo.j2"
-      dest: "/etc/yum.repos.d/"
+      dest: "/etc/yum.repos.d/CentOS-Base.repo"
       owner: "root"
       mode: "0755"
