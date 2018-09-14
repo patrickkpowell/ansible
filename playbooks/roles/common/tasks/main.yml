@@ -1,10 +1,10 @@
 ---
 
+  - import_tasks: "yum_repo.yml"
   - import_tasks: "epel.yml"
   - import_tasks: "system_packages.yml"
   - import_tasks: "networking.yml"
   - import_tasks: "selinux.yml"
-  - import_tasks: "yum_repo.yml"
 
 #  - import_tasks: hostname.yml
 
