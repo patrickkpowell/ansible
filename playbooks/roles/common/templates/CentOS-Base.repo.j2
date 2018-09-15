@@ -1,23 +1,23 @@
 [base]
 name=CentOS-$releasever - Base
-baseurl=file:///{{repo_mount}}/CentOS-7/base/
+baseurl=file://{{repo_mount}}/CentOS-7/base/
 gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 [epel]
 name=CentOS-$releasever - Epel
-baseurl=file:///{{repo_mount}}/CentOS-7/epel/
+baseurl=file://{{repo_mount}}/CentOS-7/epel/
 gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 [extras]
 name=CentOS-$releasever - Extras
-baseurl=file:///{{repo_mount}}/CentOS-7/extras/
+baseurl=file://{{repo_mount}}/CentOS-7/extras/
 gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 [updates]
 name=CentOS-$releasever - Updates
-baseurl=file:///{{repo_mount}}/CentOS-7/updates/
+baseurl=file://{{repo_mount}}/CentOS-7/updates/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
