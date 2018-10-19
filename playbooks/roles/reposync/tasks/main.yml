@@ -8,4 +8,4 @@
       - createrepo
 
   - name: Sync CentOS 7 Yum Repository
-    shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata
+    shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_mount}} --downloadcomps --download-metadata
