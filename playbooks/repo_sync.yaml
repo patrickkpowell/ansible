@@ -1,0 +1,7 @@
+---
+  - name: Sync Linux Repositories
+    hosts: "all"
+    roles:
+      - reposync
+    become_user: "root"
+    become_method: "sudo"
