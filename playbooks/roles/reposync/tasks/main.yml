@@ -9,3 +9,5 @@
 
   - name: Sync CentOS 7 Yum Repository
     shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata
+    async: 1800
+    poll: 30
