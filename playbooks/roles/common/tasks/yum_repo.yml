@@ -32,7 +32,7 @@
     file:
       path: "/etc/yum.repos.d/*"
       state: "absent"
-    when: "local_update" in "{{group_names}}"
+    when: "local_update" in group_names
 
   - name: Push base repo config
     template:
@@ -40,4 +40,4 @@
       dest: "/etc/yum.repos.d/CentOS-Base.repo"
       owner: "root"
       mode: "0755"
-    when: "local_update" in "{{group_names}}"
+    when: "local_update" in group_names
