@@ -6,6 +6,7 @@
       state: "mounted"
       fstype: "cifs"
       src: "//mycloudnas/yum_repos"
+      opts: "nobrl,username=guest,password=,uid=110,gid=120,rw,suid"
 
   - name: Update all installed packages
     yum:
