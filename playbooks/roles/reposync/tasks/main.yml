@@ -7,7 +7,22 @@
       - yum-utils
       - createrepo
 
-  - name: Sync CentOS 7 Yum Repository
+  - name: Sync CentOS 7 Base Repository
     shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata
+    async: 1800
+    poll: 30
+
+  - name: Sync CentOS 7 EPEL Repository
+    shell: reposync -d --gpgcheck -l --repoid=epel --download_path={{repo_path}} --downloadcomps --download-metadata
+    async: 1800
+    poll: 30
+
+  - name: Sync CentOS 7 Updated Repository
+    shell: reposync -d --gpgcheck -l --repoid=updates --download_path={{repo_path}} --downloadcomps --download-metadata
+    async: 1800
+    poll: 30
+
+  - name: Sync CentOS 7 Extras Repository
+    shell: reposync -d --gpgcheck -l --repoid=extras --download_path={{repo_path}} --downloadcomps --download-metadata
     async: 1800
     poll: 30
