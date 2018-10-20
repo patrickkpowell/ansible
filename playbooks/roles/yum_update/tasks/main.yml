@@ -1,4 +1,10 @@
 ---
+
+  - name:  Make sure yum repo is mounted
+    mount:
+      path: "/yum_repo"
+      state: "mounted"
+
   - name: Update all installed packages
     yum:
       name: "*"
