@@ -1,0 +1,22 @@
+---
+  
+  - name: Install Guag Packages
+    yum:
+      name: "{{item}}"
+      state: "latest"
+    with_items:
+      - guacamole
+      - guacd
+      - libguac-client-vnc
+      - libguac-client-ssh
+      - libguac-client-rdp
+
+  - name: Enable Services
+    systemd:
+      state: "started"
+      name: "{{item}}"
+      enabled: "yes"
+    with_items:
+      - tomcat6
+      - guacd
+      

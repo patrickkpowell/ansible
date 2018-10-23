@@ -1,0 +1,6 @@
+---
+
+  - hosts: guac_servers
+    roles:
+    - guacamole
+    
