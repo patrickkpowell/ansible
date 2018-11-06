@@ -40,6 +40,7 @@ $TTL 600    ; 10 minutes
 pgw         CNAME   ns1
 plex        CNAME   headliner
 skipper     CNAME   ns1
+simscontracting     CNAME   ads.simscontractingllc.com
 $TTL 300    ; 5 minutes
 Phue            A   192.168.3.249
             TXT "00be3d03445d1327a8081b043990d6e739"
