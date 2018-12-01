@@ -9,6 +9,7 @@
     lineinfile:
       path: "/etc/fstab"
       line: '{{repo_share}} {{repo_mount}} cifs nobrl,username={{repo_user}},password={{repo_passwd}},uid=110,gid=120,rw,suid 0 0'
+      regexp: '^{{repo_share}} {{repo_mount}} cifs nobrl,username={{repo_user}},password={{repo_passwd}},uid=110,gid=120,rw,suid 0 0'
 
 #  - name: Mount yum share
 #    mount:
