@@ -1,4 +1,12 @@
 ---
+
+- name:  Make sure yum repo is mounted
+    mount:
+      path: "/yum_repo"
+      state: "mounted"
+      fstype: "cifs"
+      src: "//mycloudnas/yum_repos"
+      opts: "nobrl,username=guest,password=,uid=110,gid=120,rw,suid"
   - name: Install required Packages
     yum:
       name: "{{item}}"
@@ -46,3 +54,8 @@
     shell: createrepo --update {{repo_path}}/extras
     async: 3600
     poll: 10
+
+  - name:  Make sure yum repo is unmounted
+    mount:
+      path: "/yum_repo"
+      state: "unmounted"
