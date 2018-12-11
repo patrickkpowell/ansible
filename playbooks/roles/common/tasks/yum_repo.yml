@@ -18,9 +18,17 @@
 #      src: "{{repo_share}}"
 #      fstype: "cifs"
 
-  - name: "Mount {{repo_mount}}"
-    shell: "mount {{repo_mount}}"
-    ignore_errors: "yes"
+#  - name: "Mount {{repo_mount}}"
+#    shell: "mount {{repo_mount}}"
+#    ignore_errors: "yes"
+
+  - name:  Make sure yum repo is mounted
+    mount:
+      path: "/yum_repo"
+      state: "mounted"
+      fstype: "cifs"
+      src: "//mycloudnas/yum_repos"
+      opts: "nobrl,username=guest,password=,uid=110,gid=120,rw,suid"
 
   - name: temp
     file:
@@ -43,3 +51,7 @@
       mode: "0755"
     when: '"local_update" in group_names'
     
+  - name:  Make sure yum repo is unmounted
+    mount:
+      path: "/yum_repo"
+      state: "unmounted"
