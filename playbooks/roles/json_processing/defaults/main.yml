@@ -1,0 +1,16 @@
+---
+
+  pulse_groups:
+     - name: APT1
+       urls: 
+        - '5c6472d39063e3660a1d9b5e'
+        - '59ad1701ab07491cefa6c79b'
+     - name: APT28
+       urls:
+        - '5c73a72a027c1b7031f26b36'
+        - '5c4d91901ac8e4426408e47a'
+        - '5c87c95ba3d93050cee910c0'
+
+  #APT28_FeedList:
+  #  - { url: 'https://ota.alienvault.com/otxapi/pulses/5c87c95ba3d93050cee910c0/export?format=csv'}
+

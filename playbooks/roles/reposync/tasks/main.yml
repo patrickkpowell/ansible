@@ -8,13 +8,13 @@
       src: "//mycloudnas/yum_repos"
       opts: "nobrl,username=guest,password=,uid=110,gid=120,rw,suid"
     
-  - name: Install required Packages
-    yum:
-      name: "{{item}}"
-      state: latest
-    with_items:
-      - yum-utils
-      - createrepo
+  #- name: Install required Packages
+  #  yum:
+  #    name: "{{item}}"
+  #    state: latest
+  #  with_items:
+  #    - yum-utils
+  #    - createrepo
 
   - name: Sync CentOS 7 Base Repository
     shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata

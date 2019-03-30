@@ -1,0 +1,18 @@
+---
+
+  - name: Create directories
+    file: 
+      name: "/tmp/{{item.0.name}}"
+      state: "directory"
+    #debug: var=item
+    loop: "{{lookup('subelements', pulse_groups, 'urls', {'skip_missing': True})}}"
+
+  - name: list groups for users that have them, don't error if groups key is missing
+    #shell: "curl {{item.1}} -o /tmp/{{item.0.name}}/{{item.1}}.csv"
+    #debug: var=item
+    get_url:
+      url: "https://otx.alienvault.com/otxapi/pulses/{{item.1}}/export?format=csv"
+      dest: "/tmp/{{item.0.name}}/{{item.1}}.csv"
+      mode: 0440
+    loop: "{{lookup('subelements', pulse_groups, 'urls', {'skip_missing': True})}}"
+
