@@ -14,8 +14,8 @@
       update_cache: "yes"
       state: "latest"
 
-  - name:  Make sure yum repo is unmounted
-    mount:
-      path: "/yum_repo"
-      state: "unmounted"
+  #- name:  Make sure yum repo is unmounted
+  #  mount:
+  #    path: "/yum_repo"
+  #    state: "unmounted"
 
