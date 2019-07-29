@@ -20,6 +20,7 @@
     shell: reposync -d --gpgcheck -l --repoid=base --download_path={{repo_path}} --downloadcomps --download-metadata
     async: 3600
     poll: 10
+    ignore_errors: yes
 
   - name: Update CentOS 7 Base Repository
     shell: createrepo --update {{repo_path}}/base
@@ -30,6 +31,7 @@
     shell: reposync -d --gpgcheck -l --repoid=epel --download_path={{repo_path}} --downloadcomps --download-metadata
     async: 3600
     poll: 10
+    ignore_errors: yes    
 
   - name: Update CentOS 7 EPEL Repository
     shell: createrepo --update {{repo_path}}/epel
@@ -40,6 +42,7 @@
     shell: reposync -d --gpgcheck -l --repoid=updates --download_path={{repo_path}} --downloadcomps --download-metadata
     async: 3600
     poll: 10
+    ignore_errors: yes
 
   - name: Update CentOS 7 Updates Repository
     shell: createrepo --update {{repo_path}}/updates
@@ -50,6 +53,7 @@
     shell: reposync -d --gpgcheck -l --repoid=extras --download_path={{repo_path}} --downloadcomps --download-metadata
     async: 3600
     poll: 10
+    ignore_errors: yes
 
   - name: Update CentOS 7 Extras Repository
     shell: createrepo --update {{repo_path}}/extras
