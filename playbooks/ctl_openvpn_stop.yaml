@@ -1,0 +1,7 @@
+---
+  - name: EnableVPN
+    hosts: all
+    roles:
+      - ctl_openvpn_stop
+    become_user: "root"
+    become_method: "sudo"

@@ -1,0 +1,11 @@
+---
+
+  - name: RestartNamed
+    service:
+      name=named
+      state=restarted
+
+  - name: RestartFirewalld
+    service:
+      name=firewalld
+      state=restarted

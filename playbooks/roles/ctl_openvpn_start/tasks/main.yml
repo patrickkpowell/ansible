@@ -1,0 +1,15 @@
+---
+
+  - name: Enable and start OpenVPN
+    service:
+      name: openvpn@server.service
+      state: started
+      enabled: yes
+    notify: RestartNamed
+
+  - name: Open firewall to OpenVPN
+    firewalld:
+      port: 1194/tcp
+      permanent: true
+      state: enabled
+    notify: RestartFirewalld
